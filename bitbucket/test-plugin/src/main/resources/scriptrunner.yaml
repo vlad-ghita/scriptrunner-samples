@@ -1,0 +1,35 @@
+# ScriptRunner plugin descriptor
+!descriptor
+
+    # pre-hooks
+    scriptPreHooks:
+    - FIELD_CONDITION: pathsMatch('glob:**.cpp')
+      FIELD_HOOK_ERROR_MSG: Can't commit c++ files
+      FIELD_NOTES: Can't commit c++ files
+      FIELD_PER_REPO_ID: ''
+      FIELD_PER_REPO_PROJECT_ID: ''
+      FIELD_PROJECT_REPO_IDS:
+      - repo:-1 # All repos
+      canned-script: com.onresolve.scriptrunner.canned.bitbucket.hooks.ProtectRefs
+
+    # post-hooks
+    scriptPostHooks:
+    - FIELD_INLINE_SCRIPT: log.debug("foo")
+      FIELD_NOTES: from a plugin
+      FIELD_PER_REPO_ID: ''
+      FIELD_PER_REPO_PROJECT_ID: ''
+      FIELD_PROJECT_REPO_IDS:
+      - repo:-1
+      FIELD_SCRIPT_FILE: ''
+      canned-script: com.onresolve.scriptrunner.canned.bitbucket.hooks.SimpleScriptedPostHook
+
+    # Merge checks
+    scriptMergeChecks:
+    - FIELD_INLINE_SCRIPT: log.debug("custom merge check")
+      FIELD_NOTES: custom merge check
+      FIELD_PER_REPO_ID: ''
+      FIELD_PER_REPO_PROJECT_ID: ''
+      FIELD_PROJECT_REPO_IDS:
+      - repo:-1
+      FIELD_SCRIPT_FILE: ''
+      canned-script: com.onresolve.scriptrunner.canned.bitbucket.mergechecks.SimpleScriptedMergeCheck

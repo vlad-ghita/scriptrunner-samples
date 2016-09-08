@@ -1,0 +1,18 @@
+# ScriptRunner JIRA plugin descriptor
+!descriptor
+
+    # rest endpoints
+    restConfigItems:
+    - FIELD_INLINE_SCRIPT: ''
+      FIELD_SCRIPT_FILE: com/acme/rest/SampleRestEndpoint.groovy
+      canned-script: com.onresolve.scriptrunner.canned.common.rest.CustomRestEndpoint
+      key: my-sample-script-file
+      id: '1702044425'
+
+    # fragments
+    fragmentConfigItems:
+    - FIELD_KEY: test-fragment
+      FIELD_LOCATION: jira.view.issue # todo: confluence and bbs contexts
+      FIELD_NOTES: Installs a sample javascript file in the view issue context, which prints a log message to the javascript console
+      FIELD_RESOURCE_FILES: js/scriptrunner/jira/some-file.js
+      canned-script: com.onresolve.scriptrunner.canned.common.fragments.CustomWebResource

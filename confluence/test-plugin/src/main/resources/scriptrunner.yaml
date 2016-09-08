@@ -1,0 +1,38 @@
+# ScriptRunner plugin descriptor
+!descriptor
+
+    scriptMacros:
+    - FIELD_BODY_TYPE: NONE
+      FIELD_MACRO_ARGS: '{"arguments":[]}'
+      FIELD_MACRO_DESC: Sample hello world macro
+      FIELD_MACRO_KEY: sr-hello-world
+      FIELD_MACRO_NAME: Sr Hello World
+      FIELD_OUTPUT_TYPE: BLOCK
+
+      # this parameter is always a pair, left is script, right is file
+      FIELD_SCRIPT_FILE_OR_SCRIPT:
+      - '''Hello <b>world</b>! I come from a script plugin'''
+      - ''
+      canned-script: com.onresolve.scriptrunner.canned.confluence.macros.CustomScriptMacro
+
+    - FIELD_BODY_TYPE: NONE
+      FIELD_MACRO_ARGS: '{"arguments":[]}'
+      FIELD_MACRO_DESC: Shows a macro from a file
+      FIELD_MACRO_KEY: sr-simple-file-macro
+      FIELD_MACRO_NAME: Sr File Macro
+      FIELD_OUTPUT_TYPE: BLOCK
+      FIELD_SCRIPT_FILE_OR_SCRIPT:
+      - ''
+      - com/acme/macro/SimpleSampleMacro.groovy
+      canned-script: com.onresolve.scriptrunner.canned.confluence.macros.CustomScriptMacro
+
+    # not useful to configure like this because we need the user key
+    scriptJobs:
+    - FIELD_CQL_CLAUSE: type = page
+      FIELD_INTERVAL: '0 0/1 * 1/1 * ? * '
+      FIELD_JOB_CODE:
+      - 'log.warn ''current user: '' + com.atlassian.confluence.user.AuthenticatedUserThreadLocal.get().name'
+      - ''
+      FIELD_NOTES: note
+      FIELD_USER_ID: 4028813556738aca0156738d5de00001
+      canned-script: com.onresolve.scriptrunner.canned.confluence.jobs.CustomScheduledJob
