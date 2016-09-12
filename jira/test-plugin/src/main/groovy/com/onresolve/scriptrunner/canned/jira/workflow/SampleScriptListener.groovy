@@ -47,7 +47,7 @@ class SampleScriptListener implements CannedScript {
 
     @Override
     Map doScript(Map<String, Object> params) {
-        log.debug("do something here")
+        log.warn("ScriptRunner listener: do something here")
 
         [:]
     }
