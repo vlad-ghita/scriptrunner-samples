@@ -1,7 +1,6 @@
 package com.acme.upgrades
 
 import com.acme.PluginConstants
-import com.atlassian.jira.component.ComponentAccessor
 import com.atlassian.jira.issue.context.GlobalIssueContext
 import com.atlassian.sal.api.message.Message
 import com.atlassian.sal.api.upgrade.PluginUpgradeTask
@@ -11,8 +10,6 @@ import groovy.util.logging.Log4j
 
 @Log4j
 class UpgradeTask001 implements PluginUpgradeTask {
-
-    def customFieldManager = ComponentAccessor.getCustomFieldManager()
 
     UpgradeTask001() {
     }
@@ -51,7 +48,7 @@ class UpgradeTask001 implements PluginUpgradeTask {
     }
 
     // for script console testing
-    public static void main(String[] args) {
+    static void main(String[] args) {
         new UpgradeTask001().doUpgrade()
     }
 }
