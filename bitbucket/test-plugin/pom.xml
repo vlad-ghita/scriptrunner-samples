@@ -10,7 +10,7 @@
 
     <groupId>com.onresolve.scriptrunner.assets</groupId>
     <artifactId>sr-sample-plugin-bitbucket</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
 
     <organization>
         <name>Example Company</name>

@@ -10,7 +10,7 @@
 
     <groupId>com.onresolve.scriptrunner.assets</groupId>
     <artifactId>test-plugin-common</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
     <name>Common Sample Plugin for ScriptRunner</name>
     <packaging>atlassian-plugin</packaging>
 	<description>Sample plugin for ScriptRunner, has no app-specific extensions</description>
