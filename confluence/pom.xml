@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>atlassian-plugin</packaging>
+
+    <parent>
+        <groupId>com.adaptavist.pom</groupId>
+        <artifactId>scriptrunner-confluence-standard</artifactId>
+        <version>8-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.onresolve.scriptrunner.assets</groupId>
+    <artifactId>sr-sample-plugin-confluence</artifactId>
+    <version>1.0.4-SNAPSHOT</version>
+
+    <organization>
+        <name>Example Company</name>
+        <url>http://www.example.com/</url>
+    </organization>
+
+    <name>Confluence Sample Plugin for ScriptRunner</name>
+    <description>Sample plugin for ScriptRunner, has macros, script jobs etc</description>
+
+    <properties>
+        <!-- Set your Confluence version here -->
+        <confluence.version>6.4.3</confluence.version>
+    </properties>
+
+    <dependencies>
+        <!-- The parent pom adds some standard dependencies, but you can add additional ones here -->
+    </dependencies>
+
+    <repositories>
+        <!-- This is required to find the parent pom and ScriptRunner dependencies -->
+        <repository>
+            <id>adaptavist-external</id>
+            <url>https://nexus.adaptavist.com/content/repositories/external</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+</project>

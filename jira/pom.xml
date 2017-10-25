@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>atlassian-plugin</packaging>
+
+    <parent>
+        <groupId>com.adaptavist.pom</groupId>
+        <artifactId>scriptrunner-jira-standard</artifactId>
+        <version>8-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.onresolve.scriptrunner.assets</groupId>
+    <artifactId>sr-sample-plugin-jira</artifactId>
+    <version>1.0.4-SNAPSHOT</version>
+
+    <organization>
+        <name>Example Company</name>
+        <url>http://www.example.com/</url>
+    </organization>
+
+    <name>JIRA Sample Plugin for ScriptRunner</name>
+    <description>Sample plugin for ScriptRunner, has listeners and JQL functions etc</description>
+
+    <properties>
+        <!-- Set your JIRA version here -->
+        <jira.version>7.5.1</jira.version>
+    </properties>
+
+    <dependencies>
+        <!-- The parent pom adds some standard dependencies, but you can add additional ones here -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-jira-plugin</artifactId>
+                <configuration>
+                    <applications>
+
+                        <!-- Uncomment these if you wish to include them -->
+
+                        <!-- Include Jira Software features -->
+<!--
+                        <application>
+                            <applicationKey>jira-software</applicationKey>
+                            <version>${jira.software.application.version}</version>
+                        </application>
+-->
+
+                        <!-- Include Jira Service Desk features -->
+<!--
+                        <application>
+                            <applicationKey>jira-servicedesk</applicationKey>
+                            <version>${jira.servicedesk.application.version}</version>
+                        </application>
+-->
+
+                    </applications>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <!-- This is required to find the parent pom and ScriptRunner dependencies -->
+        <repository>
+            <id>adaptavist-external</id>
+            <url>https://nexus.adaptavist.com/content/repositories/external</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+</project>
