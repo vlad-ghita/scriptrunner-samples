@@ -1,4 +1,4 @@
-package com.acme.jira.actions
+package com.example.jira.actions
 
 import com.atlassian.jira.project.ProjectManager
 import com.atlassian.jira.security.PermissionManager

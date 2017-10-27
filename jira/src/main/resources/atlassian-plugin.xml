@@ -10,15 +10,20 @@
 
     <resource type="i18n" name="i18n" location="sr-dependent-plugin"/>
 
-    <component key="userUpgradeTask1" name="Upgrade Task 1"
-               class="com.acme.upgrades.UpgradeTask001" public="true" application="jira">
+    <component key="baseUrlStartupTask" name="Update the Base URL of the application if needed"
+               class="com.example.upgrades.EnvironmentSetupStartupTask" public="true" application="jira">
+        <interface>com.atlassian.sal.api.upgrade.PluginUpgradeTask</interface>
+    </component>
+
+    <component key="createScriptFieldUpgradeTask" name="Create script field"
+               class="com.example.upgrades.CreateScriptFieldUpgradeTask" public="true" application="jira">
         <interface>com.atlassian.sal.api.upgrade.PluginUpgradeTask</interface>
     </component>
 
     <!--example of using actions-->
     <webwork1 key="sample-action" name="SampleAction">
         <actions>
-            <action name="com.acme.jira.actions.SampleAction" alias="SampleAction" roles-required="admin">
+            <action name="com.example.jira.actions.SampleAction" alias="SampleAction" roles-required="admin">
                 <view name="input">/templates/samplePlugin/default.vm</view>
                 <view name="error">/templates/samplePlugin/default.vm</view>
                 <view name="success">/templates/samplePlugin/default.vm</view>

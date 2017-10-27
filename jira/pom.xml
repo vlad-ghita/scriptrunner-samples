@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.adaptavist.pom</groupId>
         <artifactId>scriptrunner-jira-standard</artifactId>
-        <version>8</version>
+        <version>9-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
@@ -27,6 +27,8 @@
     <properties>
         <!-- Set your JIRA version here -->
         <jira.version>7.5.1</jira.version>
+        <!-- Set logging levels for development here -->
+        <logging.levels>com.example;DEBUG,com.onresolve;DEBUG</logging.levels>
     </properties>
 
     <dependencies>

@@ -7,8 +7,8 @@
 
     <parent>
         <groupId>com.adaptavist.pom</groupId>
-        <artifactId>scriptrunner-bitbucket-standard</artifactId>
-        <version>8</version>
+        <artifactId>scriptrunner-bamboo-standard</artifactId>
+        <version>9-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
@@ -27,11 +27,22 @@
     <properties>
         <!-- Set your Bamboo version here -->
         <bamboo.version>6.2.2</bamboo.version>
+        <!-- Set logging levels for development here -->
+        <logging.levels>com.onresolve;DEBUG, com.example;DEBUG</logging.levels>
     </properties>
 
     <dependencies>
         <!-- The parent pom adds some standard dependencies, but you can add additional ones here -->
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-bamboo-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <!-- This is required to find the parent pom and ScriptRunner dependencies -->

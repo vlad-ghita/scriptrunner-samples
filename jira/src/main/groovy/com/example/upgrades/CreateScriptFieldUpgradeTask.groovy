@@ -1,6 +1,5 @@
-package com.acme.upgrades
+package com.example.upgrades
 
-import com.acme.PluginConstants
 import com.atlassian.jira.issue.context.GlobalIssueContext
 import com.atlassian.sal.api.message.Message
 import com.atlassian.sal.api.upgrade.PluginUpgradeTask
@@ -9,25 +8,22 @@ import com.onresolve.scriptrunner.test.ScriptFieldCreationInfo
 import groovy.util.logging.Log4j
 
 @Log4j
-class UpgradeTask001 implements PluginUpgradeTask {
-
-    UpgradeTask001() {
-    }
+class CreateScriptFieldUpgradeTask extends AbstractUpgradeTask implements PluginUpgradeTask {
 
     @Override
     int getBuildNumber() {
-        return 6
+        return 1
     }
 
     @Override
     String getShortDescription() {
-        "A sample upgrade task"
+        "This upgrade task creates a scripted field"
     }
 
     @Override
     Collection<Message> doUpgrade() throws Exception {
-        // create managed script fields and behaviours etc.
-        log.warn("upgrading 003")
+        // create managed script fields, behaviours, and anything else not covered by the YAML file
+        log.warn("upgrading with build number $buildNumber")
 
         def scriptFieldCreation = ScriptFieldCreationInfo.Builder.newBuilder()
             .setName("TestScriptFieldSimpleNumberX")
@@ -42,13 +38,11 @@ class UpgradeTask001 implements PluginUpgradeTask {
         return null
     }
 
-    @Override
-    String getPluginKey() {
-        PluginConstants.PLUGIN_KEY
-    }
-
-    // for script console testing
+    /*
+     This method isn't necessary, but is handy for testing the upgrade task via the Script Console,
+     so you don't have to restart your local Jira instance to test it out.
+    */
     static void main(String[] args) {
-        new UpgradeTask001().doUpgrade()
+        new CreateScriptFieldUpgradeTask().doUpgrade()
     }
 }

@@ -1,6 +1,5 @@
 package com.onresolve.scriptrunner.canned.confluence.macros
 
-import com.acme.PluginConstants
 import com.atlassian.confluence.content.render.xhtml.ConversionContext
 import com.atlassian.confluence.macro.Macro
 import com.atlassian.confluence.macro.MacroExecutionException
@@ -8,7 +7,9 @@ import com.atlassian.confluence.macro.browser.beans.MacroCategory
 import com.atlassian.confluence.macro.browser.beans.MacroFormDetails
 import com.atlassian.confluence.macro.browser.beans.MacroMetadata
 import com.atlassian.confluence.macro.browser.beans.MacroMetadataBuilder
+import com.atlassian.plugin.osgi.bridge.external.PluginRetrievalService
 import com.onresolve.scriptrunner.confluence.macro.SelfDescribingScriptMacro
+import com.onresolve.scriptrunner.runner.ScriptRunnerImpl
 
 /**
  * Self-describing macros don't need any configuration in Admin -> Script Macros, as they provide that information
@@ -18,12 +19,13 @@ import com.onresolve.scriptrunner.confluence.macro.SelfDescribingScriptMacro
 class SampleSelfDescribingMacro implements SelfDescribingScriptMacro {
 
     public static final String MACRO_KEY = "sr-self-describing-macro"
+    PluginRetrievalService pluginRetrievalService = ScriptRunnerImpl.getOsgiService(PluginRetrievalService)
 
     @Override
     MacroMetadata getMacroMetadata() {
 
         def macroMetadataBuilder = new MacroMetadataBuilder().
-            setPluginKey(PluginConstants.PLUGIN_KEY).
+            setPluginKey(pluginRetrievalService.plugin.key).
             setMacroName(MACRO_KEY).
             setTitle("Sample self describing ScriptRunner macro").
             setFormDetails(MacroFormDetails.makeParameterFormDetails(MACRO_KEY, null, false, [])).

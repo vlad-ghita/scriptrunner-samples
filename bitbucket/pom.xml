@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.adaptavist.pom</groupId>
         <artifactId>scriptrunner-bitbucket-standard</artifactId>
-        <version>8</version>
+        <version>9-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
@@ -27,10 +27,17 @@
     <properties>
         <!-- Set your Bitbucket version here -->
         <bitbucket.version>5.5.0</bitbucket.version>
+        <logback.libversion>1.0.13</logback.libversion>
     </properties>
 
     <dependencies>
         <!-- The parent pom adds some standard dependencies, but you can add additional ones here -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.libversion}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <repositories>

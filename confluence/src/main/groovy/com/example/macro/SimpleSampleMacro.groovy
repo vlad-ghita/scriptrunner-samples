@@ -1,3 +1,3 @@
-package com.acme.macro
+package com.example.macro
 
 "A simple macro in a file"
