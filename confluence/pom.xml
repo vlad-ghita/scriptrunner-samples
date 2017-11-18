@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.adaptavist.pom</groupId>
         <artifactId>scriptrunner-confluence-standard</artifactId>
-        <version>8</version>
+        <version>9</version>
         <relativePath/>
     </parent>
 
@@ -27,11 +27,22 @@
     <properties>
         <!-- Set your Confluence version here -->
         <confluence.version>6.4.3</confluence.version>
+        <!-- Set logging levels for development here -->
+        <logging.levels>com.onresolve;DEBUG, com.example;DEBUG</logging.levels>
     </properties>
 
     <dependencies>
         <!-- The parent pom adds some standard dependencies, but you can add additional ones here -->
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-confluence-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <!-- This is required to find the parent pom and ScriptRunner dependencies -->
