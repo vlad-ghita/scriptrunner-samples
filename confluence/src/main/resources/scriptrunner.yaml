@@ -23,7 +23,7 @@
       FIELD_OUTPUT_TYPE: BLOCK
       FIELD_SCRIPT_FILE_OR_SCRIPT:
       - ''
-      - com/acme/macro/SimpleSampleMacro.groovy
+      - com/example/macro/SimpleSampleMacro.groovy
       canned-script: com.onresolve.scriptrunner.canned.confluence.macros.CustomScriptMacro
 
     # not useful to configure like this because we need the user key
