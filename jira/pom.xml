@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.adaptavist.pom</groupId>
         <artifactId>scriptrunner-jira-standard</artifactId>
-        <version>10</version>
+        <version>11</version>
         <relativePath/>
     </parent>
 
@@ -26,7 +26,7 @@
 
     <properties>
         <!-- Set your JIRA version here -->
-        <jira.version>7.5.1</jira.version>
+        <jira.version>7.9.0</jira.version>
         <!-- Set logging levels for development here -->
         <logging.levels>com.example;DEBUG,com.onresolve;DEBUG</logging.levels>
     </properties>
@@ -41,6 +41,7 @@
                 <groupId>com.atlassian.maven.plugins</groupId>
                 <artifactId>maven-jira-plugin</artifactId>
                 <configuration>
+                    <jvmArgs>-Xms512m -Xmx1g -XX:MaxPermSize=1g -XX:-UseGCOverheadLimit -server</jvmArgs>
                     <applications>
 
                         <!-- Uncomment these if you wish to include them -->
