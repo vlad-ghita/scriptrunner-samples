@@ -35,7 +35,7 @@ class EnvironmentSetupStartupTask extends AbstractUpgradeTask implements PluginU
         log.debug "Application property base URL: $configuredUrl"
         String propertyBaseUrl = System.getProperty("baseurl")
         log.debug "System property base URL: $propertyBaseUrl"
-        if (propertyBaseUrl != configuredUrl) {
+        if (propertyBaseUrl && propertyBaseUrl != configuredUrl) {
             log.debug "Resetting base URL to correct value"
             applicationProperties.setString(APKeys.JIRA_BASEURL, propertyBaseUrl)
         }
