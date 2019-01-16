@@ -24,4 +24,8 @@
         <tag>HEAD</tag>
     </scm>
 
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
+
 </project>
