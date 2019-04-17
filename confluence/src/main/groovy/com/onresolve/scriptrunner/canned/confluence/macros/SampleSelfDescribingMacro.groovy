@@ -28,7 +28,15 @@ class SampleSelfDescribingMacro implements SelfDescribingScriptMacro {
             setPluginKey(pluginRetrievalService.plugin.key).
             setMacroName(MACRO_KEY).
             setTitle("Sample self describing ScriptRunner macro").
-            setFormDetails(MacroFormDetails.makeParameterFormDetails(MACRO_KEY, null, false, [])).
+            setFormDetails(
+                MacroFormDetails.builder()
+                    .macroName(MACRO_KEY)
+                    .documentationUrl(null)
+                    .showDefaultParamInPlaceholder(false)
+                    .parameters(
+                        []
+                    ).build()
+            ).
             setDescription("blah blah").
             setCategories([MacroCategory.CONFLUENCE_CONTENT.name] as Set)
 
