@@ -14,7 +14,7 @@
 
     <groupId>com.onresolve.scriptrunner.assets</groupId>
     <artifactId>sr-sample-plugin-bamboo</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.7</version>
 
     <organization>
         <name>Example Company</name>
