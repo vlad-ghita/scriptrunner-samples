@@ -33,6 +33,11 @@
 
     <dependencies>
         <!-- The parent pom adds some standard dependencies, but you can add additional ones here -->
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>4.8.43</version>
+        </dependency>
     </dependencies>
 
     <build>
