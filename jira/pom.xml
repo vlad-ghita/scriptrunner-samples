@@ -49,7 +49,7 @@
                         <!--
                         <application>
                             <applicationKey>jira-software</applicationKey>
-                            <version>${jira.software.application.version}</version>
+                            <version>${jira.software.version}</version>
                         </application>
                         -->
 
@@ -57,7 +57,7 @@
                         <!--
                         <application>
                             <applicationKey>jira-servicedesk</applicationKey>
-                            <version>${jira.servicedesk.application.version}</version>
+                            <version>${jira.servicedesk.version}</version>
                         </application>
                         -->
                     </applications>
