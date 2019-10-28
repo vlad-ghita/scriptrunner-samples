@@ -21,8 +21,8 @@
         <url>http://www.example.com/</url>
     </organization>
 
-    <name>JIRA Sample Plugin for ScriptRunner</name>
-    <description>Sample plugin for ScriptRunner, has listeners and JQL functions etc</description>
+    <name>Jira Sample Plugin for ScriptRunner</name>
+    <description>ScriptRunner for Jira script plugin</description>
 
     <properties>
         <!-- Set your JIRA version here -->
