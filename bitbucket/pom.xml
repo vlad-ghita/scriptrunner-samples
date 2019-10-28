@@ -22,7 +22,7 @@
     </organization>
 
     <name>Bitbucket Sample Plugin for ScriptRunner</name>
-    <description>Sample plugin for ScriptRunner, has pre and post hooks, merge checks etc</description>
+    <description>ScriptRunner for Bitbucket script plugin</description>
 
     <properties>
         <!-- Set your Bitbucket version here -->

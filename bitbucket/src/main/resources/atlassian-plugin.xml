@@ -5,15 +5,12 @@
         <vendor name="${project.organization.name}" url="${project.organization.url}" />
         <param name="plugin-icon">images/pluginIcon.png</param>
         <param name="plugin-logo">images/pluginLogo.png</param>
-
     </plugin-info>
 
     <resource type="i18n" name="i18n" location="sr-dependent-plugin"/>
-    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties"/>
 
-    <component key="baseUrlStartupTask" name="Base URL Startup Task"
-               class="com.example.upgrades.EnvironmentSetupStartupTask" public="true" application="bitbucket">
+    <component key="baseUrlStartupTask" name="Update Bitbucket's Base URL"
+               class="com.adaptavist.SetBaseUrlStartupTask" public="true" application="bitbucket">
         <interface>com.atlassian.sal.api.upgrade.PluginUpgradeTask</interface>
     </component>
-
 </atlassian-plugin>
