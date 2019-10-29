@@ -7,15 +7,7 @@ scriptListeners:
       - ''
     events:
       - com.atlassian.jira.event.ProjectCreatedEvent
-    FIELD_INLINE_SCRIPT: |-
-      import com.atlassian.jira.component.ComponentAccessor
-      import com.atlassian.jira.event.ProjectCreatedEvent
-      import com.atlassian.jira.project.UpdateProjectParameters
-
-      def event = event as ProjectCreatedEvent
-      def updateProjectParameters = UpdateProjectParameters.forProject(event.project.id).description("foo bar description")
-      ComponentAccessor.projectManager.updateProject(updateProjectParameters)
-    clazz: ''
+    clazz: com.adaptavist/CustomEventListenerScript.groovy
     canned-script: com.onresolve.scriptrunner.canned.jira.workflow.listeners.CustomListener
     friendlyEventNames: ProjectCreatedEvent
     name: Custom listener
