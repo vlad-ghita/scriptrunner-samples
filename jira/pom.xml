@@ -14,7 +14,7 @@
 
     <groupId>com.onresolve.scriptrunner.assets</groupId>
     <artifactId>sr-sample-plugin-jira</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>0.1.5</version>
 
     <organization>
         <name>Example Company</name>
@@ -26,7 +26,7 @@
 
     <properties>
         <!-- Set your JIRA version here -->
-        <jira.version>7.13.11</jira.version>
+        <jira.version>7.11.2</jira.version>
         <!-- Set logging levels for development here -->
         <logging.levels>com.example;DEBUG,com.onresolve;DEBUG</logging.levels>
     </properties>
