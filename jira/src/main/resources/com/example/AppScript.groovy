@@ -8,3 +8,4 @@ app = new App(logger)
 app.boot()
 
 app.logger.info("Script loaded.")
+app.logger.info("Hello script.")

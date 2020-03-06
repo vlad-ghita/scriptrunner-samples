@@ -20,7 +20,7 @@ class App {
 
     void boot() {
         logger.info("App started.")
-//        logger.info("Hello app.")
+        logger.info("Hello app.")
     }
 
 }

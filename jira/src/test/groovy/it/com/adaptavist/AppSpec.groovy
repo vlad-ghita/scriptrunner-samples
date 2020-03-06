@@ -23,7 +23,7 @@ class AppSpec extends Specification {
     def "Sanity check."() {
         given:
         app.logger.info("Spec loaded.")
-//        app.logger.info("Hello spec.")
+        app.logger.info("Hello spec.")
     }
 
 }
